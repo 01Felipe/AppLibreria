@@ -1,0 +1,39 @@
+<h1>Autor</h1>
+<p></p>
+
+<button [routerLink]='["/autor-agregar"]' class="btn-primary">Agregar Autor</button>
+<p *ngIf="!(autores && autores.length)">
+  No existen registros de autores
+</p>
+
+<table class="table" *ngIf="autores && autores.length">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Ciudad</th>
+      <th>Correo</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let autores of autores">
+      <td>
+        {{autores.nombre}}
+      </td>
+      <td>
+        {{autores.fecha}}
+      </td>
+      <td>
+        {{autores.ciudad_Procedencia}}
+      </td>
+      <td>
+        {{autores.correo}}
+      </td>
+     
+
+
+    </tr>
+  </tbody>
+</table>
+

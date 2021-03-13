@@ -1,0 +1,132 @@
+<h1>Agregar Libro</h1>
+<form class="form-horizontal" novalidate
+      (ngSubmit)="save()" [formGroup]="formGroup">
+  <fieldset>
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('titulo').touched || formGroup.get('titulo').dirty) && !formGroup.get('titulo').valid}">
+      <label class="col-md-2 control-label"
+             for="tituloId">Titulo</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="tituloId"
+               type="text"
+               required
+               formControlName="titulo" />
+        <span class="help-block" *ngIf="(formGroup.get('titulo').touched || formGroup.get('titulo').dirty) && !formGroup.get('titulo').valid">
+          <span *ngIf="formGroup.get('titulo').errors.required">
+            El campo titulo es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('ano').touched || formGroup.get('ano').dirty) && !formGroup.get('ano').valid}">
+      <label class="col-md-2 control-label"
+             for="anoId">año</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="anoId"
+               type="number"
+               required
+               formControlName="ano" />
+        <span class="help-block" *ngIf="(formGroup.get('ano').touched || formGroup.get('ano').dirty) && !formGroup.get('ano').valid">
+          <span *ngIf="formGroup.get('ano').errors.required">
+            El campo año es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('genero').touched || formGroup.get('genero').dirty) && !formGroup.get('genero').valid}">
+      <label class="col-md-2 control-label"
+             for="genero">Genero</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="genero"
+               type="text"
+               required
+               formControlName="genero" />
+        <span class="help-block" *ngIf="(formGroup.get('genero').touched || formGroup.get('genero').dirty) && !formGroup.get('genero').valid">
+          <span *ngIf="formGroup.get('genero').errors.required">
+            El campo genero es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('numeroPaginas').touched || formGroup.get('numeroPaginas').dirty) && !formGroup.get('numeroPaginas').valid}">
+      <label class="col-md-2 control-label"
+             for="numeroPaginas">Numero Paginas</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="numeroPaginas"
+               type="number"
+               required
+               formControlName="numeroPaginas" />
+        <span class="help-block" *ngIf="(formGroup.get('numeroPaginas').touched || formGroup.get('numeroPaginas').dirty) && !formGroup.get('numeroPaginas').valid">
+          <span *ngIf="formGroup.get('numeroPaginas').errors.required">
+            El campo numero Paginas es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('editorial').touched || formGroup.get('editorial').dirty) && !formGroup.get('editorial').valid}">
+      <label class="col-md-2 control-label"
+             for="editorial">Editorial</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="editorial"
+               type="text"
+               required
+               formControlName="editorial" />
+        <span class="help-block" *ngIf="(formGroup.get('editorial').touched || formGroup.get('editorial').dirty) && !formGroup.get('editorial').valid">
+          <span *ngIf="formGroup.get('editorial').errors.required">
+            El campo editorial es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('Autor').touched || formGroup.get('Autor').dirty) && !formGroup.get('Autor').valid}">
+      <label class="col-md-2 control-label"
+             for="Autor">Autor</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="Autor"
+               type="text"
+               required
+               formControlName="Autor" />
+        <span class="help-block" *ngIf="(formGroup.get('Autor').touched || formGroup.get('Autor').dirty) && !formGroup.get('Autor').valid">
+          <span *ngIf="formGroup.get('editorial').errors.required">
+            El campo Autor es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+        <span>
+          <button class="btn btn-primary"
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            Guardar
+          </button>
+          <button class="btn"
+                  [routerLink]='["/"]'>
+            Cancelar
+          </button>
+        </span>
+      </div>
+
+    </div>
+
+  </fieldset>
+
+</form>

@@ -1,0 +1,43 @@
+<h1>Editorial</h1>
+<p></p>
+
+<button [routerLink]='["/editorial-agregar"]' class="btn-primary">Agregar Editorial</button>
+<p *ngIf="!(editoriales && editoriales.length)">
+  No existen registros de autores
+</p>
+
+<table class="table" *ngIf="editoriales && editoriales.length">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Correo</th>
+      <th>Maximo</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let editoriales of editoriales">
+      <td>
+        {{editoriales.nombre}}
+      </td>
+      <td>
+        {{editoriales.direccion}}
+      </td>
+      <td>
+        {{editoriales.telefono}}
+      </td>
+      <td>
+        {{editoriales.correo}}
+      </td>
+      <td>
+        {{editoriales.maximo}}
+      </td>
+
+
+
+    </tr>
+  </tbody>
+</table>
+
